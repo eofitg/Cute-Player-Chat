@@ -1,0 +1,16 @@
+name: CutePlayerChat
+version: '${project.version}'
+main: com.eofitg.cuteplayerchat.CutePlayerChat
+api-version: 1.18
+authors: [ eofitg ]
+description: Make players chat more cute!
+
+commands:
+  setsuff:
+    description: Set the suffix
+    usage: /setsuff <suffix> [playerName_1] ... [playerName_n]
+  delsuff:
+    description: Delete the suffix
+    usage: /delsuff [playerName_1] ... [playerName_n]
+    permission: delsuff.op
+    permission-message: §4权限不足，无法删除!
