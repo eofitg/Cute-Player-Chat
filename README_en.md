@@ -1,5 +1,7 @@
 # Cute-Player-Chat
 
+[中文](README.md) | [English](README_en.md)
+
 All of the following help content is also in the "/cuteplayerchat help":
 ~~~
 /cuteplaychat help
