@@ -3,14 +3,24 @@ version: '${project.version}'
 main: com.eofitg.cuteplayerchat.CutePlayerChat
 api-version: 1.18
 authors: [ eofitg ]
-description: Make players chat more cute!
+description: Make players‘ chat more cute!
 
 commands:
+  cuteplayerchat:
+    description: CPC plugin's setup and management.
+    usage: /cuteplayerchat help
+    permission: cuteplayerchat.help
+    permission-message: §4权限不足，无法执行！
+  getsuff:
+    description: Get the players' suffixes
+    usage: /getsuff [playerName_1] ... [playerName_n]
+    permission: cuteplayerchat.getsuff
+    permission-message: §4权限不足，无法查看！
   setsuff:
     description: Set the suffix
     usage: /setsuff <suffix> [playerName_1] ... [playerName_n]
   delsuff:
     description: Delete the suffix
     usage: /delsuff [playerName_1] ... [playerName_n]
-    permission: delsuff.op
+    permission: cuteplayerchat.delsuff
     permission-message: §4权限不足，无法删除!

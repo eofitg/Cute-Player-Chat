@@ -1,0 +1,10 @@
+prefix: '&7[&aCutePlayerChat&7] '
+help:
+  header: '&7--------------------- [&a CutePlayerChat &7] ---------------------'
+  help: '&7- &a/cuteplayerchat help &f- &7显示帮助信息'
+  list: '&7- &a/cuteplayerchat list &f- &7列出当前服务器的CPC插件用户'
+  getsuff: '&7- &a/getsuff [playerName_1] ... [playerName_n] &f- &7查看自己或者其他多个玩家的聊天后缀'
+  setsuff: '&7- &a/setsuff <suffix> [playerName_1] ... [playerName_n] &f- &7设置自己或者其他多个玩家的聊天后缀'
+  delsuff: '&7- &a/delsuff [playerName_1] ... [playerName_n] &f- &7删除自己或者其他多个玩家的聊天后缀'
+list:
+  list: '&7Users ({0}): {1}'

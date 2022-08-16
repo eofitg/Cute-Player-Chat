@@ -14,12 +14,9 @@ public class ConfigReader {
     public static String getSuffix(String playerName) {
         if(users.contains(playerName)) {
             String re = config.getString("data." + playerName + ".suffix","");
-            String empty = "EMPTY";
             if(re.equals("")) {
                 re = "喵";
-            }else if (re.equals(empty)) {
-                re = "";
-            }
+            } // 当re == "EMPTY" 表示删除过后缀，为""才是没有设置过
             return re;
         }
         return "";

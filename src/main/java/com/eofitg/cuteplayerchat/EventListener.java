@@ -13,9 +13,10 @@ public class EventListener implements Listener {
         // String playerUuid = e.getPlayer().getUniqueId().toString();
 
         String sendMessage = playerMessage;
-        // String playerData = playerName + '|' + playerUuid;
-        // sendMessage = playerMessage + "喵~";
         String suffix = ConfigReader.getSuffix(playerName);
+        if(suffix.equals("EMPTY")) {
+            suffix = "";
+        }
         sendMessage += suffix;
         e.setMessage(sendMessage);
 
