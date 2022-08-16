@@ -1,5 +1,7 @@
 # Cute-Player-Chat
 
+[中文](README.md) | [English](README_en.md)
+
 算是一个新的想法吧，现在只是一个的允许玩家改动聊天后缀的的效果（）
 
 下文所有的内容其实就是帮助信息里所写的：
