@@ -10,23 +10,35 @@
 ~~~
 ---
 ## 使用方法 - 聊天后缀
-使用
+查询自己或者多个玩家的聊天后缀：
 ~~~
 /getsuff [playerName_1] ... [playerName_n]
 ~~~
-来查询自己或者多个玩家的聊天后缀
 
-使用
+查询所有玩家的聊天后缀：
 ~~~
-/setsuff <suffix> [playerName_1] ... [playerName_n]
+/getsuffall
 ~~~
-来改动自己或者多个玩家的聊天后缀
 
-使用
+改动自己或者多个玩家的聊天后缀：
+~~~
+/setsuff [playerName_1] ... [playerName_n] <suffix>
+~~~
+
+改动所有玩家的聊天后缀：
+~~~
+/setsuffall <suffix>
+~~~
+
+删除自己或者多个玩家的聊天后缀：
 ~~~
 /delsuff [playerName_1] ... [playerName_n]
 ~~~
-来删除自己或者多个玩家的聊天后缀
+
+删除所有玩家的聊天后缀：
+~~~
+/delsuffall
+~~~
 
 以后会增加更多对玩家聊天内容的修改方式，来实现将任意玩家的聊天信息萌化（?）的效果
 
