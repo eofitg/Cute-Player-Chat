@@ -35,13 +35,19 @@ public final class CutePlayerChat extends JavaPlugin {
         Objects.requireNonNull(Bukkit.getPluginCommand("cuteplayerchat:cuteplayerchat")).setExecutor(new CommandHandler());
         Objects.requireNonNull(Bukkit.getPluginCommand("getsuff")).setExecutor(new CommandHandler());
         Objects.requireNonNull(Bukkit.getPluginCommand("cuteplayerchat:getsuff")).setExecutor(new CommandHandler());
+        Objects.requireNonNull(Bukkit.getPluginCommand("getsuffall")).setExecutor(new CommandHandler());
+        Objects.requireNonNull(Bukkit.getPluginCommand("cuteplayerchat:getsuffall")).setExecutor(new CommandHandler());
         Objects.requireNonNull(Bukkit.getPluginCommand("setsuff")).setExecutor(new CommandHandler());
         Objects.requireNonNull(Bukkit.getPluginCommand("cuteplayerchat:setsuff")).setExecutor(new CommandHandler());
+        Objects.requireNonNull(Bukkit.getPluginCommand("setsuffall")).setExecutor(new CommandHandler());
+        Objects.requireNonNull(Bukkit.getPluginCommand("cuteplayerchat:setsuffall")).setExecutor(new CommandHandler());
         Objects.requireNonNull(Bukkit.getPluginCommand("delsuff")).setExecutor(new CommandHandler());
         Objects.requireNonNull(Bukkit.getPluginCommand("cuteplayerchat:delsuff")).setExecutor(new CommandHandler());
-        // Bukkit.getServer().getPluginManager().registerEvent(this, this);
-        // saveResource("userCache.yml", false);
+        Objects.requireNonNull(Bukkit.getPluginCommand("delsuffall")).setExecutor(new CommandHandler());
+        Objects.requireNonNull(Bukkit.getPluginCommand("cuteplayerchat:delsuffall")).setExecutor(new CommandHandler());
+
         getLogger().info("CPC插件已经成功加载！");
+        
     }
 
     @Override

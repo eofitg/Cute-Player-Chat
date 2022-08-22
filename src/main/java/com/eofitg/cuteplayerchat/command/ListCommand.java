@@ -3,14 +3,9 @@ package com.eofitg.cuteplayerchat.command;
 import com.eofitg.cuteplayerchat.ConfigReader;
 import com.eofitg.cuteplayerchat.CutePlayerChat;
 import com.google.common.base.Joiner;
-import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
-import org.bukkit.plugin.Plugin;
 
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class ListCommand extends AbstractCommand{

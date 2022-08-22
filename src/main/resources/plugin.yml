@@ -1,5 +1,5 @@
 name: CutePlayerChat
-version: '${project.version}'
+version: 'v0.2.1'
 main: com.eofitg.cuteplayerchat.CutePlayerChat
 api-version: 1.18
 authors: [ eofitg ]
@@ -16,11 +16,24 @@ commands:
     usage: /getsuff [playerName_1] ... [playerName_n]
     permission: cuteplayerchat.getsuff
     permission-message: §4权限不足，无法查看！
+  getsuffall:
+    description: Get all the players' suffixes
+    usage: /getsuffall
+    permission: cuteplayerchat.getsuffall
+    permission-message: §4权限不足，无法查看！
   setsuff:
     description: Set the suffix
-    usage: /setsuff <suffix> [playerName_1] ... [playerName_n]
+    usage: /setsuff [playerName_1] ... [playerName_n] <suffix>
+  setsuffall:
+    description: Set all the suffix
+    usage: /setsuffall <suffix>
   delsuff:
     description: Delete the suffix
     usage: /delsuff [playerName_1] ... [playerName_n]
     permission: cuteplayerchat.delsuff
+    permission-message: §4权限不足，无法删除!
+  delsuffall:
+    description: Delete all the suffix
+    usage: /delsuffall
+    permission: cuteplayerchat.delsuffall
     permission-message: §4权限不足，无法删除!

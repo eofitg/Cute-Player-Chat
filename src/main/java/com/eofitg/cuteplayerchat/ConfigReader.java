@@ -3,12 +3,12 @@ package com.eofitg.cuteplayerchat;
 import org.bukkit.configuration.file.FileConfiguration;
 
 import java.util.List;
+import java.util.Objects;
 
 public class ConfigReader {
 
     public static FileConfiguration config = CutePlayerChat.instance.getConfig();
-    private static final List<String> users = config.getStringList("data.users");
-    // public static File file = new File("userCache.yml");
+    public static final List<String> users = config.getStringList("data.users");
     // public static FileConfiguration userCache = YamlConfiguration.loadConfiguration(file);
 
     public static String getSuffix(String playerName) {
@@ -30,7 +30,7 @@ public class ConfigReader {
         CutePlayerChat.instance.saveConfig();
     }
     public static boolean deleteSuffix(String playerName) {
-        if(users.contains(playerName)&&!config.getString("data." + playerName + ".suffix").equals("EMPTY")) {
+        if(users.contains(playerName)&&!Objects.equals(config.getString("data." + playerName + ".suffix"), "EMPTY")) {
             String empty = "EMPTY";
             config.set("data." + playerName + ".suffix", empty);
             return true;
