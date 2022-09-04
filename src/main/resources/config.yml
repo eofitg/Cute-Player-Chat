@@ -1,0 +1,20 @@
+users:
+  suffix:
+usercaches:
+  suffix:
+commandNames:
+  - cuteplayerchat
+  - getsuff
+  - getsuffall
+  - setsuff
+  - setsuffall
+  - delsuff
+  - delsuffall
+commands:
+  cuteplayerchat: [ cuteplayerchat, cpc ]
+  getsuff: [ getsuff, gs ]
+  getsuffall: [ getsuffall, gsa ]
+  setsuff: [ setsuff, ss ]
+  setsuffall: [ setsuffall, ssa ]
+  delsuff: [ delsuff, ds ]
+  delsuffall: [ delsuffall, dsa ]

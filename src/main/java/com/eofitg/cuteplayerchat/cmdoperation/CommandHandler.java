@@ -1,8 +1,10 @@
-package com.eofitg.cuteplayerchat;
+package com.eofitg.cuteplayerchat.cmdoperation;
 
+import com.eofitg.cuteplayerchat.CPCConfigReader;
 import com.eofitg.cuteplayerchat.command.AbstractCommand;
 import com.eofitg.cuteplayerchat.command.HelpCommand;
 import com.eofitg.cuteplayerchat.command.ListCommand;
+import com.eofitg.cuteplayerchat.data.SuffixReader;
 import com.eofitg.cuteplayerchat.operation.ChatSuffix;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -18,7 +20,7 @@ public class CommandHandler implements CommandExecutor {
         if(!(sender instanceof Player)) { // 检验是否是玩家信息
             return false;
         }
-        if(label.equalsIgnoreCase("cuteplayerchat")||label.equalsIgnoreCase("cuteplayerchat:cuteplayerchat")) { // 获取帮助
+        if(CommandChecker.conform(label, "cuteplayerchat")) { // 获取帮助
             AbstractCommand childCommand = new HelpCommand(sender);
             if(args.length == 0) {
                 // 默认执行/cutechat help
@@ -40,7 +42,7 @@ public class CommandHandler implements CommandExecutor {
             ((AbstractCommand)childCommand).execute(sender, command, label, args);
             return true;
         }
-        if(label.equalsIgnoreCase("getsuff")||label.equalsIgnoreCase("cuteplayerchat:getsuff")) {
+        if(CommandChecker.conform(label, "getsuff")) {
             // 查看后缀
             if(sender.isOp()||sender.hasPermission("cuteplayerchat.getsuff")) {
                 try {
@@ -52,11 +54,11 @@ public class CommandHandler implements CommandExecutor {
                 }
             }
         }
-        if(label.equalsIgnoreCase("getsuffall")||label.equalsIgnoreCase("cuteplayerchat:getsuffall")) {
+        if(CommandChecker.conform(label, "getsuffall")) {
             // 查看所有后缀
             if(sender.isOp()||sender.hasPermission("cuteplayerchat.getsuffall")) {
                 try {
-                    String playerNames[] = ConfigReader.users.toArray(new String[0]);
+                    String playerNames[] = SuffixReader.users.toArray(new String[0]);
                     ChatSuffix.getSuffix(sender, playerNames);
                     return true;
                 } catch (Exception e) {
@@ -65,7 +67,7 @@ public class CommandHandler implements CommandExecutor {
                 }
             }
         }
-        if(label.equalsIgnoreCase("setsuff")||label.equalsIgnoreCase("cuteplayerchat:setsuff")) {
+        if(CommandChecker.conform(label, "setsuff")) {
             // 重设后缀
             if(args.length == 0) {
                 sender.sendMessage("§4未指定聊天后缀!");
@@ -79,7 +81,7 @@ public class CommandHandler implements CommandExecutor {
                 return false;
             }
         }
-        if(label.equalsIgnoreCase("setsuffall")||label.equalsIgnoreCase("cuteplayerchat:setsuffall")) {
+        if(CommandChecker.conform(label, "setsuffall")) {
             // 重设所有后缀
             if(args.length == 0) {
                 sender.sendMessage("§4未指定聊天后缀!");
@@ -87,7 +89,7 @@ public class CommandHandler implements CommandExecutor {
             }
             try {
                 String suffix = args[args.length - 1];
-                List<String> names = ConfigReader.users;
+                List<String> names = CPCConfigReader.getUsers("suffix");
                 names.add(suffix);
                 String playerNames[] = names.toArray(new String[0]);
                 ChatSuffix.setSuffix(sender, playerNames, suffix);
@@ -97,7 +99,7 @@ public class CommandHandler implements CommandExecutor {
                 return false;
             }
         }
-        if((label.equalsIgnoreCase("delsuff")||label.equalsIgnoreCase("cuteplayerchat:delsuff"))) {
+        if(CommandChecker.conform(label, "delsuff")) {
             // 删除后缀
             if(sender.isOp()||sender.hasPermission("cuteplayerchat.delsuff")) {
                 try {
@@ -109,11 +111,11 @@ public class CommandHandler implements CommandExecutor {
                 }
             }
         }
-        if((label.equalsIgnoreCase("delsuffall")||label.equalsIgnoreCase("cuteplayerchat:delsuffall"))) {
+        if(CommandChecker.conform(label, "delsuffall")) {
             // 删除所有后缀
             if(sender.isOp()||sender.hasPermission("cuteplayerchat.delsuffall")) {
                 try {
-                    String playerNames[] = ConfigReader.users.toArray(new String[0]);
+                    String playerNames[] = CPCConfigReader.getUsers("suffix").toArray(new String[0]);
                     ChatSuffix.deleteSuffix(sender, playerNames);
                     return true;
                 } catch (Exception e) {

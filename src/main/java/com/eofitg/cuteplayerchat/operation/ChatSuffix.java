@@ -1,6 +1,6 @@
 package com.eofitg.cuteplayerchat.operation;
 
-import com.eofitg.cuteplayerchat.ConfigReader;
+import com.eofitg.cuteplayerchat.data.SuffixReader;
 import org.bukkit.command.CommandSender;
 
 public class ChatSuffix {
@@ -12,8 +12,8 @@ public class ChatSuffix {
         String sendMessage1 = "";
         String sendMessage2 = "";
         if(args.length == 0) { // 等于0，代表没有额外指定玩家名字，那么查看自己的(/getsuff)
-            if(!ConfigReader.getSuffix(playerName).equals("")&&!ConfigReader.getSuffix(playerName).equals("EMPTY")) {
-                sender.sendMessage("§7" + playerName + "当前的聊天后缀是：" + ConfigReader.getSuffix(playerName));
+            if(!SuffixReader.getSuffix(playerName).equals("")&&!SuffixReader.getSuffix(playerName).equals("EMPTY")) {
+                sender.sendMessage("§7" + playerName + "当前的聊天后缀是：" + SuffixReader.getSuffix(playerName));
             } else {
                 sender.sendMessage("§4" + playerName + "还没有设置聊天后缀！");
             }
@@ -23,8 +23,8 @@ public class ChatSuffix {
             // sender.sendMessage(Integer.toString(args.length));
             for(int i=0; i<args.length; i++) {
                 String _playerName = args[i];
-                if(!ConfigReader.getSuffix(_playerName).equals("")&&!ConfigReader.getSuffix(_playerName).equals("EMPTY")) {
-                    sender.sendMessage("§7" + _playerName + "当前的聊天后缀是：" + ConfigReader.getSuffix(_playerName));
+                if(!SuffixReader.getSuffix(_playerName).equals("")&&!SuffixReader.getSuffix(_playerName).equals("EMPTY")) {
+                    sender.sendMessage("§7" + _playerName + "当前的聊天后缀是：" + SuffixReader.getSuffix(_playerName));
                     if(canGetPlayerNames.equals("")) {
                         canGetPlayerNames = _playerName;
                         continue;
@@ -57,7 +57,7 @@ public class ChatSuffix {
         String playerName = sender.getName(); // 默认更改自己的聊天后缀
         String playerNames = "";
         if(args.length == 1) { // 等于1，代表没有额外指定玩家名字，那么修改自己的(/setsuff <suffix>)
-            ConfigReader.setSuffix(playerName, suffix);
+            SuffixReader.setSuffix(playerName, suffix);
             sender.sendMessage("§a" + playerName + "的聊天后缀已修改为：" + suffix);
         } else {
             // 大于1，代表额外指定了玩家名字
@@ -74,7 +74,7 @@ public class ChatSuffix {
             // sender.sendMessage(playerNames);
             for(int i=0; i<args.length - 1; i++) {
                 String _playerName = args[i];
-                ConfigReader.setSuffix(_playerName, suffix);
+                SuffixReader.setSuffix(_playerName, suffix);
             }
             sender.sendMessage("§a" + playerNames + "的聊天后缀已修改为：" + suffix);
         }
@@ -87,7 +87,7 @@ public class ChatSuffix {
         String sendMessage1 = "";
         String sendMessage2 = "";
         if(args.length == 0) { // 等于0，代表没有额外指定玩家名字，那么删除自己的(/delsuff)
-            if(ConfigReader.deleteSuffix(playerName)) {
+            if(SuffixReader.deleteSuffix(playerName)) {
                 sender.sendMessage("§a" + playerName + "的聊天后缀已删除！");
             } else {
                 sender.sendMessage("§4" + playerName + "还没有设置聊天后缀！");
@@ -98,7 +98,7 @@ public class ChatSuffix {
             // sender.sendMessage(Integer.toString(args.length));
             for(int i=0; i<args.length; i++) {
                 String _playerName = args[i];
-                if(ConfigReader.deleteSuffix(_playerName)) {
+                if(SuffixReader.deleteSuffix(_playerName)) {
                     if(canDelPlayerNames.equals("")) {
                         canDelPlayerNames = _playerName;
                         continue;

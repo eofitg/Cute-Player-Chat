@@ -1,22 +1,28 @@
 package com.eofitg.cuteplayerchat;
 
+import com.eofitg.cuteplayerchat.cmdoperation.CommandRegister;
+import com.eofitg.cuteplayerchat.listener.SuffixListener;
 import com.eofitg.cuteplayerchat.messaging.MessageFormatter;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
-import java.util.Objects;
 
 public final class CutePlayerChat extends JavaPlugin {
 
-    public static CutePlayerChat instance;
+    private static CutePlayerChat instance;
     private MessageFormatter messageFormatter = null;
+    private static String pluginName = null;
     public static CutePlayerChat getInstance() {
         return instance;
     }
     public MessageFormatter getMessageFormatter() {
         return this.messageFormatter;
     }
+    public static String getPluginName() {
+        return pluginName;
+    }
+
     @Override
     public void onLoad() {
         saveDefaultConfig();
@@ -25,27 +31,14 @@ public final class CutePlayerChat extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
         instance = this;
+        pluginName = instance.getName();
         File messagesFile = new File("plugins" + File.separator + "CutePlayerChat", "messages.yml");
         if (!messagesFile.exists()) {
             this.saveResource("messages.yml", true);
         }
         this.messageFormatter = new MessageFormatter();
-        Bukkit.getPluginManager().registerEvents(new EventListener(), this);
-        Objects.requireNonNull(Bukkit.getPluginCommand("cuteplayerchat")).setExecutor(new CommandHandler());
-        Objects.requireNonNull(Bukkit.getPluginCommand("cuteplayerchat:cuteplayerchat")).setExecutor(new CommandHandler());
-        Objects.requireNonNull(Bukkit.getPluginCommand("getsuff")).setExecutor(new CommandHandler());
-        Objects.requireNonNull(Bukkit.getPluginCommand("cuteplayerchat:getsuff")).setExecutor(new CommandHandler());
-        Objects.requireNonNull(Bukkit.getPluginCommand("getsuffall")).setExecutor(new CommandHandler());
-        Objects.requireNonNull(Bukkit.getPluginCommand("cuteplayerchat:getsuffall")).setExecutor(new CommandHandler());
-        Objects.requireNonNull(Bukkit.getPluginCommand("setsuff")).setExecutor(new CommandHandler());
-        Objects.requireNonNull(Bukkit.getPluginCommand("cuteplayerchat:setsuff")).setExecutor(new CommandHandler());
-        Objects.requireNonNull(Bukkit.getPluginCommand("setsuffall")).setExecutor(new CommandHandler());
-        Objects.requireNonNull(Bukkit.getPluginCommand("cuteplayerchat:setsuffall")).setExecutor(new CommandHandler());
-        Objects.requireNonNull(Bukkit.getPluginCommand("delsuff")).setExecutor(new CommandHandler());
-        Objects.requireNonNull(Bukkit.getPluginCommand("cuteplayerchat:delsuff")).setExecutor(new CommandHandler());
-        Objects.requireNonNull(Bukkit.getPluginCommand("delsuffall")).setExecutor(new CommandHandler());
-        Objects.requireNonNull(Bukkit.getPluginCommand("cuteplayerchat:delsuffall")).setExecutor(new CommandHandler());
-
+        Bukkit.getPluginManager().registerEvents(new SuffixListener(), this);
+        CommandRegister.register(CPCConfigReader.getCmdNames());
         getLogger().info("CPC插件已经成功加载！");
         
     }
@@ -55,7 +48,9 @@ public final class CutePlayerChat extends JavaPlugin {
         // Plugin shutdown logic
         instance = null;
         messageFormatter = null;
+        pluginName = null;
         saveConfig();
+        CPCConfigReader.reset();
         getLogger().info("CPC插件已经成功卸载！");
     }
 

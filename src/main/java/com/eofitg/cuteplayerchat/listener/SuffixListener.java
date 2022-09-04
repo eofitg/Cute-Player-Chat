@@ -1,10 +1,11 @@
-package com.eofitg.cuteplayerchat;
+package com.eofitg.cuteplayerchat.listener;
 
+import com.eofitg.cuteplayerchat.data.SuffixReader;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
-public class EventListener implements Listener {
+public class SuffixListener implements Listener {
     @EventHandler
     public void onPlayerChat(AsyncPlayerChatEvent e) {
 
@@ -13,7 +14,7 @@ public class EventListener implements Listener {
         // String playerUuid = e.getPlayer().getUniqueId().toString();
 
         String sendMessage = playerMessage;
-        String suffix = ConfigReader.getSuffix(playerName);
+        String suffix = SuffixReader.getSuffix(playerName);
         if(suffix.equals("EMPTY")) {
             suffix = "";
         }
