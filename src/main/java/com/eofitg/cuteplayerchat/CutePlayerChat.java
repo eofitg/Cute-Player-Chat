@@ -4,6 +4,7 @@ import com.eofitg.cuteplayerchat.cmdoperation.CommandRegister;
 import com.eofitg.cuteplayerchat.listener.SuffixListener;
 import com.eofitg.cuteplayerchat.messaging.MessageFile;
 import com.eofitg.cuteplayerchat.messaging.MessageFormatter;
+import com.eofitg.cuteplayerchat.messaging.MessageReader;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -45,8 +46,7 @@ public final class CutePlayerChat extends JavaPlugin {
         this.messageFormatter = new MessageFormatter();
         Bukkit.getPluginManager().registerEvents(new SuffixListener(), this);
         CommandRegister.register(CPCConfigReader.getCmdNames());
-        getLogger().info("CPC插件已经成功加载！");
-        
+        getLogger().info(MessageReader.get("tips.success.load"));
     }
 
     @Override
@@ -58,7 +58,7 @@ public final class CutePlayerChat extends JavaPlugin {
         pluginName = null;
         saveConfig();
         CPCConfigReader.reset();
-        getLogger().info("CPC插件已经成功卸载！");
+        getLogger().info(MessageReader.get("tips.success.unload"));
     }
 
 
