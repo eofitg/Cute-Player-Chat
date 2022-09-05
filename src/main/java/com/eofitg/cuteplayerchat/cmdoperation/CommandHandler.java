@@ -5,6 +5,7 @@ import com.eofitg.cuteplayerchat.command.AbstractCommand;
 import com.eofitg.cuteplayerchat.command.HelpCommand;
 import com.eofitg.cuteplayerchat.command.ListCommand;
 import com.eofitg.cuteplayerchat.data.SuffixReader;
+import com.eofitg.cuteplayerchat.messaging.MessageReader;
 import com.eofitg.cuteplayerchat.operation.ChatSuffix;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -15,6 +16,8 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 
 public class CommandHandler implements CommandExecutor {
+    protected String wrongFormat = MessageReader.get("tips.error.wrong-format");
+    protected String withoutData = MessageReader.get("tips.error.without-data.suffix");
     @Override @ParametersAreNonnullByDefault
     public boolean onCommand(CommandSender sender, Command command, String label, String args[]) {
         if(!(sender instanceof Player)) { // 检验是否是玩家信息
@@ -49,7 +52,7 @@ public class CommandHandler implements CommandExecutor {
                     ChatSuffix.getSuffix(sender, args);
                     return true;
                 } catch (Exception e) {
-                    sender.sendMessage("§4请输入正确格式的指令！");
+                    sender.sendMessage(wrongFormat);
                     return false;
                 }
             }
@@ -62,7 +65,7 @@ public class CommandHandler implements CommandExecutor {
                     ChatSuffix.getSuffix(sender, playerNames);
                     return true;
                 } catch (Exception e) {
-                    sender.sendMessage("§4请输入正确格式的指令！");
+                    sender.sendMessage(wrongFormat);
                     return false;
                 }
             }
@@ -70,21 +73,21 @@ public class CommandHandler implements CommandExecutor {
         if(CommandChecker.conform(label, "setsuff")) {
             // 重设后缀
             if(args.length == 0) {
-                sender.sendMessage("§4未指定聊天后缀!");
+                sender.sendMessage(withoutData);
                 return false;
             }
             try {
                 ChatSuffix.setSuffix(sender, args, args[args.length - 1]);
                 return true;
             } catch (Exception e) {
-                sender.sendMessage("§4请输入正确格式的指令！");
+                sender.sendMessage(wrongFormat);
                 return false;
             }
         }
         if(CommandChecker.conform(label, "setsuffall")) {
             // 重设所有后缀
             if(args.length == 0) {
-                sender.sendMessage("§4未指定聊天后缀!");
+                sender.sendMessage(withoutData);
                 return false;
             }
             try {
@@ -95,7 +98,7 @@ public class CommandHandler implements CommandExecutor {
                 ChatSuffix.setSuffix(sender, playerNames, suffix);
                 return true;
             } catch (Exception e) {
-                sender.sendMessage("§4请输入正确格式的指令！");
+                sender.sendMessage(wrongFormat);
                 return false;
             }
         }
@@ -106,7 +109,7 @@ public class CommandHandler implements CommandExecutor {
                     ChatSuffix.deleteSuffix(sender, args);
                     return true;
                 } catch (Exception e) {
-                    sender.sendMessage("§4请输入正确格式的指令！");
+                    sender.sendMessage(wrongFormat);
                     return false;
                 }
             }
@@ -119,7 +122,7 @@ public class CommandHandler implements CommandExecutor {
                     ChatSuffix.deleteSuffix(sender, playerNames);
                     return true;
                 } catch (Exception e) {
-                    sender.sendMessage("§4请输入正确格式的指令！");
+                    sender.sendMessage(wrongFormat);
                     return false;
                 }
             }

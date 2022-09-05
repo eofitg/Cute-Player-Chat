@@ -11,3 +11,12 @@ help:
   delsuffall: '&7- &a/delsuffall &f- &4删除所有玩家的聊天后缀'
 list:
   list: '&7Users ({0}): {1}'
+tips:
+  error:
+    insufficient-permission: "&4权限不足，无法执行！"
+    wrong-format: "&4请输入正确格式的指令！"
+    without-data:
+      suffix: "&4未指定聊天后缀！"
+  success:
+    load: "CPC插件已成功加载！"
+    unload: "CPC插件已成功卸载！"
