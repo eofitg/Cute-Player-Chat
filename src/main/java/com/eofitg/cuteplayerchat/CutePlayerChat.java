@@ -52,13 +52,14 @@ public final class CutePlayerChat extends JavaPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+        String unload = MessageReader.get("tips.success.unload");
         instance = null;
         messageFile = null;
         messageFormatter = null;
         pluginName = null;
         saveConfig();
         CPCConfigReader.reset();
-        getLogger().info(MessageReader.get("tips.success.unload"));
+        getLogger().info(unload);
     }
 
 
