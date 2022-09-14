@@ -7,36 +7,36 @@ All of the following help content is also in the "/cuteplayerchat help":
 /cuteplaychat help
 ~~~
 ---
-## Chat suffix part:
+## Chat prefix or suffix:
 
-Query your own chat suffix or other players:
+Query your own or other players' chat prefix or suffix:
 ~~~
-/getsuff [playerName_1] ... [playerName_n]
-~~~
-
-Query all players' chat suffixes:
-~~~
-/getsuffall
+/getpre|getsuf [playerName_1] ... [playerName_n]
 ~~~
 
-Change your own chat suffix or other players:
+Query all players' chat prefixes or suffixes:
 ~~~
-/setsuff [playerName_1] ... [playerName_n] <suffix>
-~~~
-
-Change all players' chat suffixes:
-~~~
-/setsuffall <suffix>
+/getpreall|getsufall
 ~~~
 
-Delete your own chat suffix or other players
+Change your own or other players' chat prefix or suffix:
 ~~~
-/delsuff [playerName_1] ... [playerName_n]
+/setpre|setsuf [playerName_1] ... [playerName_n] <prefix>|<suffix>
 ~~~
 
-Delete all players' chat suffixes:
+Change all players' chat prefixes or suffixes:
 ~~~
-/delsuffall
+/setpreall|setsufall <prefix>|<suffix>
+~~~
+
+Delete your own or other players' chat prefix or suffix:
+~~~
+/delpre|delsuf [playerName_1] ... [playerName_n]
+~~~
+
+Delete all players' chat prefixes or suffixes:
+~~~
+/delpreall|delsufall
 ~~~
 
 In the future, more ways to modify the chat messages of players will be added to achieve the effect of making any player's chat message more cute and lovely.

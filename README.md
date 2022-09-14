@@ -11,35 +11,35 @@
 /cuteplaychat help
 ~~~
 ---
-## 使用方法 - 聊天后缀
-查询自己或者多个玩家的聊天后缀：
+## 使用方法 - 聊天前后缀
+查询自己或者多个玩家的聊天前后缀：
 ~~~
-/getsuff [playerName_1] ... [playerName_n]
-~~~
-
-查询所有玩家的聊天后缀：
-~~~
-/getsuffall
+/getpre|getsuf [playerName_1] ... [playerName_n]
 ~~~
 
-改动自己或者多个玩家的聊天后缀：
+查询所有玩家的聊天前后缀：
 ~~~
-/setsuff [playerName_1] ... [playerName_n] <suffix>
-~~~
-
-改动所有玩家的聊天后缀：
-~~~
-/setsuffall <suffix>
+/getpreall|getsufall
 ~~~
 
-删除自己或者多个玩家的聊天后缀：
+改动自己或者多个玩家的聊天前后缀：
 ~~~
-/delsuff [playerName_1] ... [playerName_n]
+/setpre|setsuf [playerName_1] ... [playerName_n] <prefix>|<suffix>
 ~~~
 
-删除所有玩家的聊天后缀：
+改动所有玩家的聊天前后缀：
 ~~~
-/delsuffall
+/setpreall|setsufall <prefix>|<suffix>
+~~~
+
+删除自己或者多个玩家的聊天前后缀：
+~~~
+/delpre|delsuf [playerName_1] ... [playerName_n]
+~~~
+
+删除所有玩家的聊天前后缀：
+~~~
+/delpreall|delsufall
 ~~~
 
 以后会增加更多对玩家聊天内容的修改方式，来实现将任意玩家的聊天信息萌化（?）的效果
