@@ -1,5 +1,5 @@
 name: CutePlayerChat
-version: '0.2.2'
+version: '0.3.0'
 main: com.eofitg.cuteplayerchat.CutePlayerChat
 api-version: 1.18
 authors: [ eofitg ]
