@@ -25,7 +25,7 @@ public class ListCommand extends AbstractCommand {
             sender.sendMessage("§4权限不足，无法执行！");
             return;
         }
-        List<String> userNames = CPCConfigReader.getUsers("suffix");
+        List<String> userNames = CPCConfigReader.getStrL("userNames");
         String users = Joiner.on(", ").join((Iterable)userNames);
         sender.sendMessage(CutePlayerChat.getInstance().getMessageFormatter().format("list.list", userNames.size(), users));
     }

@@ -6,41 +6,76 @@ authors: [ eofitg ]
 description: Make players‘ chat more cute!
 
 commands:
+
   cuteplayerchat:
     aliases: [ cpc ]
     description: CPC plugin's setup and management.
     usage: /cuteplayerchat help
     permission: cuteplayerchat.help
     permission-message: §4权限不足，无法执行！
-  getsuff:
+
+  getsuf:
     aliases: [ gs ]
     description: Get the players' suffixes
-    usage: /getsuff [playerName_1] ... [playerName_n]
-    permission: cuteplayerchat.getsuff
+    usage: /getsuf [playerName_1] ... [playerName_n]
+    permission: cuteplayerchat.getsuf
     permission-message: §4权限不足，无法查看！
-  getsuffall:
+  getsufall:
     aliases: [ gsa ]
     description: Get all the players' suffixes
-    usage: /getsuffall
-    permission: cuteplayerchat.getsuffall
+    usage: /getsufall
+    permission: cuteplayerchat.getsufall
     permission-message: §4权限不足，无法查看！
-  setsuff:
+  setsuf:
     aliases: [ ss ]
     description: Set the suffix
-    usage: /setsuff [playerName_1] ... [playerName_n] <suffix>
-  setsuffall:
+    usage: /setsuf [playerName_1] ... [playerName_n] <suffix>
+  setsufall:
     aliases: [ ssa ]
     description: Set all the suffix
-    usage: /setsuffall <suffix>
-  delsuff:
+    usage: /setsufall <suffix>
+  delsuf:
     aliases: [ ds ]
     description: Delete the suffix
-    usage: /delsuff [playerName_1] ... [playerName_n]
-    permission: cuteplayerchat.delsuff
+    usage: /delsuf [playerName_1] ... [playerName_n]
+    permission: cuteplayerchat.delsuf
     permission-message: §4权限不足，无法删除!
-  delsuffall:
+  delsufall:
     aliases: [ dsa ]
     description: Delete all the suffix
-    usage: /delsuffall
-    permission: cuteplayerchat.delsuffall
+    usage: /delsufall
+    permission: cuteplayerchat.delsufall
+    permission-message: §4权限不足，无法删除!
+
+  getpre:
+    aliases: [ gp ]
+    description: Get the players' prefixes
+    usage: /getpre [playerName_1] ... [playerName_n]
+    permission: cuteplayerchat.presuf
+    permission-message: §4权限不足，无法查看！
+  getpreall:
+    aliases: [ gpa ]
+    description: Get all the players' prefixes
+    usage: /getpreall
+    permission: cuteplayerchat.getpreall
+    permission-message: §4权限不足，无法查看！
+  setpre:
+    aliases: [ sp ]
+    description: Set the prefix
+    usage: /setpre [playerName_1] ... [playerName_n] <prefix>
+  setpreall:
+    aliases: [ spa ]
+    description: Set all the prefix
+    usage: /setpreall <prefix>
+  delpre:
+    aliases: [ dp ]
+    description: Delete the prefix
+    usage: /delpre [playerName_1] ... [playerName_n]
+    permission: cuteplayerchat.delpre
+    permission-message: §4权限不足，无法删除!
+  delpreall:
+    aliases: [ dpa ]
+    description: Delete all the prefix
+    usage: /delpreall
+    permission: cuteplayerchat.delpreall
     permission-message: §4权限不足，无法删除!

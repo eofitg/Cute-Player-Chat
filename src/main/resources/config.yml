@@ -1,20 +1,37 @@
+userNames:
 users:
+  prefix:
   suffix:
 usercaches:
+  prefix:
   suffix:
 commandNames:
   - cuteplayerchat
-  - getsuff
-  - getsuffall
-  - setsuff
-  - setsuffall
-  - delsuff
-  - delsuffall
+  - getsuf
+  - getsufall
+  - setsuf
+  - setsufall
+  - delsuf
+  - delsufall
+  - getpre
+  - getpreall
+  - setpre
+  - setpreall
+  - delpre
+  - delpreall
 commands:
   cuteplayerchat: [ cuteplayerchat, cpc ]
-  getsuff: [ getsuff, gs ]
-  getsuffall: [ getsuffall, gsa ]
-  setsuff: [ setsuff, ss ]
-  setsuffall: [ setsuffall, ssa ]
-  delsuff: [ delsuff, ds ]
-  delsuffall: [ delsuffall, dsa ]
+
+  getsuf: [ getsuf, gs ]
+  getsufall: [ getsufall, gsa ]
+  setsuf: [ setsuf, ss ]
+  setsufall: [ setsufall, ssa ]
+  delsuf: [ delsuf, ds ]
+  delsufall: [ delsufall, dsa ]
+
+  getpre: [ getpre, gp ]
+  getpreall: [ getpreall, gpa ]
+  setpre: [ setpre, sp ]
+  setpreall: [ setpreall, spa ]
+  delpre: [ delpre, dp ]
+  delpreall: [ delpreall, dpa ]

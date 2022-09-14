@@ -2,20 +2,18 @@ package com.eofitg.cuteplayerchat.data;
 
 import com.eofitg.cuteplayerchat.CPCConfigReader;
 import com.eofitg.cuteplayerchat.CutePlayerChat;
-import org.bukkit.configuration.file.FileConfiguration;
 
 import java.util.List;
 import java.util.Objects;
 
-public class SuffixReader {
-
-    public static final List<String> users = CPCConfigReader.getUsers("suffix");
+public class PrefixReader {
+    public static final List<String> users = CPCConfigReader.getUsers("prefix");
     private static List<String> userNames = CPCConfigReader.getStrL("userNames");
-    private static String userPath = "users.suffix";
+    private static String userPath = "users.prefix";
     private static String userNamePath = "userNames";
-    private static final String cachePath = "usercaches.suffix.";
+    private static final String cachePath = "usercaches.prefix.";
 
-    public static String getSuffix(String playerName) {
+    public static String getPrefix(String playerName) {
         if(users.contains(playerName)) {
             String re = CPCConfigReader.getStr(cachePath + playerName);
             if(re.equals("")) {
@@ -25,7 +23,7 @@ public class SuffixReader {
         }
         return "";
     }
-    public static void setSuffix(String playerName, String suffix) {
+    public static void setPrefix(String playerName, String prefix) {
         if(!users.contains(playerName)) {
             users.add(playerName);
         }
@@ -34,10 +32,10 @@ public class SuffixReader {
         }
         CPCConfigReader.set(userPath,users);
         CPCConfigReader.set(userNamePath, userNames);
-        CPCConfigReader.set(cachePath + playerName, suffix);
+        CPCConfigReader.set(cachePath + playerName, prefix);
         CutePlayerChat.getInstance().saveConfig();
     }
-    public static boolean deleteSuffix(String playerName) {
+    public static boolean deletePrefix(String playerName) {
         if(users.contains(playerName)&&!Objects.equals(CPCConfigReader.getStr(cachePath + playerName), "EMPTY")) {
             String empty = "EMPTY";
             CPCConfigReader.set(cachePath + playerName, empty);
@@ -46,5 +44,4 @@ public class SuffixReader {
         }
         return false;
     }
-
 }

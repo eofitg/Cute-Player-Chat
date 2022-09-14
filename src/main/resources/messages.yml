@@ -1,22 +1,38 @@
 prefix: '&7[&aCutePlayerChat&7] '
 help:
-  header: '&7--------------------- [&a CutePlayerChat &7] ---------------------'
+  header: '&7------------------- [&a CutePlayerChat &7] -------------------'
   help: '&7- &a/cuteplayerchat help &f- &7显示帮助信息'
   list: '&7- &a/cuteplayerchat list &f- &7列出当前服务器的CPC插件用户'
-  getsuff: '&7- &a/getsuff [playerName_1] ... [playerName_n] &f- &7查看自己或者其他多个玩家的聊天后缀'
-  getsuffall: '&7- &a/getsuffall &f- &7查看所有玩家的聊天后缀'
-  setsuff: '&7- &a/setsuff [playerName_1] ... [playerName_n] <suffix> &f- &7设置自己或者其他多个玩家的聊天后缀'
-  setsuffall: '&7- &a/setsuffall <suffix> &f- &4设置所有玩家的聊天后缀'
-  delsuff: '&7- &a/delsuff [playerName_1] ... [playerName_n] &f- &7删除自己或者其他多个玩家的聊天后缀'
-  delsuffall: '&7- &a/delsuffall &f- &4删除所有玩家的聊天后缀'
+  get: '&7- &a/cuteplayerchat get &f- &7列出所有获取信息相关的指令'
+  set: '&7- &a/cuteplayerchat set &f- &7列出所有设置信息相关的指令'
+  delete: '&7- &a/cuteplayerchat delete &f- &7列出所有删除信息相关的指令'
 list:
   list: '&7Users ({0}): {1}'
+get:
+  header: '&7---------------------- [&a Get Help &7] ----------------------'
+  getpre: '&7- &a/getpre [playerName_1] ... [playerName_n] &f- &7查看自己或者其他多个玩家的聊天前缀'
+  getsuf: '&7- &a/getsuf [playerName_1] ... [playerName_n] &f- &7查看自己或者其他多个玩家的聊天后缀'
+  getpreall: '&7- &a/getpreall &f- &7查看所有玩家的聊天前缀'
+  getsufall: '&7- &a/getsufall &f- &7查看所有玩家的聊天后缀'
+set:
+  header: '&7---------------------- [&a Set Help &7] ----------------------'
+  setpre: '&7- &a/setpre [playerName_1] ... [playerName_n] <prefix> &f- &7设置自己或者其他多个玩家的聊天前缀'
+  setsuf: '&7- &a/setsuf [playerName_1] ... [playerName_n] <suffix> &f- &7设置自己或者其他多个玩家的聊天后缀'
+  setpreall: '&7- &a/setpreall <prefix> &f- &4设置所有玩家的聊天前缀'
+  setsufall: '&7- &a/setsufall <suffix> &f- &4设置所有玩家的聊天后缀'
+delete:
+  header: '&7-------------------- [&a Delete Help &7] --------------------'
+  delpre: '&7- &a/delpre [playerName_1] ... [playerName_n] &f- &7删除自己或者其他多个玩家的聊天前缀'
+  delsuf: '&7- &a/delsuf [playerName_1] ... [playerName_n] &f- &7删除自己或者其他多个玩家的聊天后缀'
+  delpreall: '&7- &a/delpreall &f- &4删除所有玩家的聊天前缀'
+  delsufall: '&7- &a/delsufall &f- &4删除所有玩家的聊天后缀'
 tips:
   error:
     insufficient-permission: "&4权限不足，无法执行！"
     wrong-format: "&4请输入正确格式的指令！"
     without-data:
       suffix: "&4未指定聊天后缀！"
+      prefix: "&4未指定聊天前缀！"
   success:
     load: "CPC插件已成功加载！"
     unload: "CPC插件已成功卸载！"

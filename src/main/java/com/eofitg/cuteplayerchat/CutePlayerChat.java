@@ -1,6 +1,8 @@
 package com.eofitg.cuteplayerchat;
 
 import com.eofitg.cuteplayerchat.cmdoperation.CommandRegister;
+import com.eofitg.cuteplayerchat.listener.PlayerListener;
+import com.eofitg.cuteplayerchat.listener.PrefixListener;
 import com.eofitg.cuteplayerchat.listener.SuffixListener;
 import com.eofitg.cuteplayerchat.messaging.MessageFile;
 import com.eofitg.cuteplayerchat.messaging.MessageFormatter;
@@ -44,6 +46,8 @@ public final class CutePlayerChat extends JavaPlugin {
         }
         messageFile = new MessageFile(mFile);
         this.messageFormatter = new MessageFormatter();
+        Bukkit.getPluginManager().registerEvents(new PlayerListener(), this);
+        Bukkit.getPluginManager().registerEvents(new PrefixListener(), this);
         Bukkit.getPluginManager().registerEvents(new SuffixListener(), this);
         CommandRegister.register(CPCConfigReader.getCmdNames());
         getLogger().info(MessageReader.get("tips.success.load"));
