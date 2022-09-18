@@ -13,30 +13,29 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.io.File;
 
 public final class CutePlayerChat extends JavaPlugin {
-
     private static CutePlayerChat instance;
     private static MessageFile messageFile = null;
     private MessageFormatter messageFormatter = null;
     private static String pluginName = null;
-    public static CutePlayerChat getInstance() {
+    public static CutePlayerChat getInstance () {
         return instance;
     }
     public static MessageFile getMessageFile () {
         return messageFile;
     }
-    public MessageFormatter getMessageFormatter() {
+    public MessageFormatter getMessageFormatter () {
         return this.messageFormatter;
     }
-    public static String getPluginName() {
+    public static String getPluginName () {
         return pluginName;
     }
 
     @Override
-    public void onLoad() {
+    public void onLoad () {
         saveDefaultConfig();
     }
     @Override
-    public void onEnable() {
+    public void onEnable () {
         // Plugin startup logic
         instance = this;
         pluginName = instance.getName();
@@ -54,7 +53,7 @@ public final class CutePlayerChat extends JavaPlugin {
     }
 
     @Override
-    public void onDisable() {
+    public void onDisable () {
         // Plugin shutdown logic
         String unload = MessageReader.get("tips.success.unload");
         instance = null;
@@ -65,6 +64,5 @@ public final class CutePlayerChat extends JavaPlugin {
         CPCConfigReader.reset();
         getLogger().info(unload);
     }
-
 
 }

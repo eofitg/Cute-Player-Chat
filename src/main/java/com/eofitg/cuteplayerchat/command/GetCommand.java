@@ -12,12 +12,12 @@ public class GetCommand extends AbstractCommand {
     public static final String USAGE = "/cuteplayerchat get";
     public static final String[] SUB_PERMISSIONS = new String[]{""};
 
-    public GetCommand(CommandSender sender) {
+    public GetCommand (CommandSender sender) {
         super(sender, NAME, DESCRIPTION, PERMISSION, SUB_PERMISSIONS, USAGE);
     }
 
     @Override
-    public void execute(CommandSender sender, Command command, String label, String[] args) {
+    public void execute (CommandSender sender, Command command, String label, String[] args) {
         if (!this.hasPermission()) {
             sender.sendMessage("§4权限不足，无法执行！");
             return;

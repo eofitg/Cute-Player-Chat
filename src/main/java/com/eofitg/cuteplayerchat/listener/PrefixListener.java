@@ -13,11 +13,10 @@ public class PrefixListener implements Listener {
 
         String sendMessage = playerMessage;
         String prefix = PrefixReader.getPrefix(playerName);
-        if(prefix.equals("EMPTY")) { // 该玩家存在
+        if (prefix.equals("EMPTY")) { // 该玩家存在
             prefix = "";
         }
         sendMessage = prefix + sendMessage;
         e.setMessage(sendMessage);
-
     }
 }

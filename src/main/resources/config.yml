@@ -1,10 +1,12 @@
 userNames:
 users:
-  prefix:
-  suffix:
+  affix:
+    prefix:
+    suffix:
 usercaches:
-  prefix:
-  suffix:
+  affix:
+    prefix:
+    suffix:
 commandNames:
   - cuteplayerchat
   - getsuf
@@ -35,3 +37,8 @@ commands:
   setpreall: [ setpreall, spa ]
   delpre: [ delpre, dp ]
   delpreall: [ delpreall, dpa ]
+
+default-config:
+  affix:
+    prefix: '嗷呜'
+    suffix: '喵'

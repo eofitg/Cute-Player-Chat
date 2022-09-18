@@ -33,5 +33,4 @@ public class CPCConfigReader {
         config = null;
         cmdNames = null;
     }
-
 }

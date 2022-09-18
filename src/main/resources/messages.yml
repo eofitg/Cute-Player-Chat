@@ -28,11 +28,51 @@ delete:
   delsufall: '&7- &a/delsufall &f- &4删除所有玩家的聊天后缀'
 tips:
   error:
-    insufficient-permission: "&4权限不足，无法执行！"
-    wrong-format: "&4请输入正确格式的指令！"
+    insufficient-permission: '&4权限不足，无法执行！'
+    wrong-format: '&4请输入正确格式的指令！'
     without-data:
-      suffix: "&4未指定聊天后缀！"
-      prefix: "&4未指定聊天前缀！"
+      affix:
+        suffix: '&4未指定聊天后缀！'
+        prefix: '&4未指定聊天前缀！'
   success:
-    load: "CPC插件已成功加载！"
-    unload: "CPC插件已成功卸载！"
+    load: 'CPC插件已成功加载！'
+    unload: 'CPC插件已成功卸载！'
+    get:
+      affix:
+        suffix:
+          text: '&7{0}当前的聊天后缀是：{1}'
+          partial: '&6{0}的聊天后缀获取成功！'
+          all: '&a所有聊天后缀获取成功！'
+        prefix:
+          text: '&7{0}当前的聊天前缀是：{1}'
+          partial: '&6{0}的聊天前缀获取成功！'
+          all: '&a所有聊天前缀获取成功！'
+    set:
+      affix:
+        suffix: '&a{0}的聊天后缀已修改为：{1}'
+        prefix: '&a{0}的聊天前缀已修改为：{1}'
+    delete:
+      affix:
+        suffix:
+          partial: '&a{0}的聊天后缀已删除！'
+          all: '&a所有聊天后缀删除成功！'
+        prefix:
+          partial: '&a{0}的聊天前缀已删除！'
+          all: '&a所有聊天前缀删除成功！'
+  fail:
+    get:
+      affix:
+        suffix:
+          partial: '&4{0}还没有设置聊天后缀！'
+          all: '&4所有聊天后缀获取失败！'
+        prefix:
+          partial: '&4{0}还没有设置聊天前缀！'
+          all: '&4所有聊天前缀获取失败！'
+    delete:
+      affix:
+        suffix:
+          partial: '&4{0}还没有设置聊天后缀！'
+          all: '&4所有聊天后缀删除失败！'
+        prefix:
+          partial: '&4{0}还没有设置聊天前缀！'
+          all: '&4所有聊天前缀删除失败！'

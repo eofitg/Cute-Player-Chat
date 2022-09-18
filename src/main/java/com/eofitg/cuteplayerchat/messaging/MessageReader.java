@@ -10,5 +10,4 @@ public class MessageReader {
     public static String getString (String key) {
         return CutePlayerChat.getMessageFile().get(key);
     }
-
 }

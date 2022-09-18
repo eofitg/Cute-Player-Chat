@@ -15,7 +15,7 @@ public abstract class AbstractCommand {
     private final String usage;
     private final String[] subPermissions;
 
-    public AbstractCommand(CommandSender sender, String name, String description, String permission, String[] subPermissions, String usage) {
+    public AbstractCommand (CommandSender sender, String name, String description, String permission, String[] subPermissions, String usage) {
         this.sender = sender;
         this.name = name;
         this.description = description;
@@ -24,56 +24,56 @@ public abstract class AbstractCommand {
         this.usage = usage;
     }
 
-    public CommandSender getSender() {
+    public CommandSender getSender () {
         return this.sender;
     }
 
-    public String getName() {
+    public String getName () {
         return this.name;
     }
 
-    public String getDescription() {
+    public String getDescription () {
         return this.description;
     }
 
-    public String getPermission() {
+    public String getPermission () {
         return this.permission;
     }
 
-    public String[] getSubPermissions() {
+    public String[] getSubPermissions () {
         return this.subPermissions;
     }
 
-    public String getUsage() {
+    public String getUsage () {
         return this.usage;
     }
 
-    public boolean hasPermission() {
+    public boolean hasPermission () {
         return this.sender.hasPermission(this.permission) || this.isSenderConsole() || this.isSenderRemoteConsole();
     }
 
-    public boolean hasPermission(String sub) {
+    public boolean hasPermission (String sub) {
         String permission = this.permission + "." + sub;
         return this.sender.hasPermission(permission) || this.isSenderConsole() || this.isSenderRemoteConsole();
     }
 
-    public void sendUsage() {
+    public void sendUsage () {
         this.sender.sendMessage(CutePlayerChat.getInstance().getMessageFormatter().format(false, "error.usage.command", this.name));
         this.sender.sendMessage(CutePlayerChat.getInstance().getMessageFormatter().format(false, "error.usage.description", this.description));
         this.sender.sendMessage(CutePlayerChat.getInstance().getMessageFormatter().format(false, "error.usage.usage", this.usage));
     }
 
-    public boolean isSenderPlayer() {
+    public boolean isSenderPlayer () {
         return this.sender instanceof Player;
     }
 
-    public boolean isSenderConsole() {
+    public boolean isSenderConsole () {
         return this.sender instanceof ConsoleCommandSender;
     }
 
-    public boolean isSenderRemoteConsole() {
+    public boolean isSenderRemoteConsole () {
         return this.sender instanceof RemoteConsoleCommandSender;
     }
 
-    public abstract void execute(CommandSender var1, Command var2, String var3, String[] var4);
+    public abstract void execute (CommandSender var1, Command var2, String var3, String[] var4);
 }

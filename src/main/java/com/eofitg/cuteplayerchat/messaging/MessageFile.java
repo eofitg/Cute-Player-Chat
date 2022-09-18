@@ -5,24 +5,23 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
 import java.io.InputStreamReader;
-import java.io.Reader;
 
 public class MessageFile {
-    private FileConfiguration config = null;
+    private final FileConfiguration config;
 
-    public MessageFile(String name) {
-        this.config = YamlConfiguration.loadConfiguration((Reader)new InputStreamReader(this.getClass().getClassLoader().getResourceAsStream(name)));
+    public MessageFile (String name) {
+        this.config = YamlConfiguration.loadConfiguration(new InputStreamReader(this.getClass().getClassLoader().getResourceAsStream(name)));
     }
 
-    public MessageFile(File file) {
-        this.config = YamlConfiguration.loadConfiguration((File)file);
+    public MessageFile (File file) {
+        this.config = YamlConfiguration.loadConfiguration(file);
     }
 
-    public FileConfiguration getConfig() {
+    public FileConfiguration getConfig () {
         return this.config;
     }
 
-    public String get(String key) {
+    public String get (String key) {
         return this.config.getString(key);
     }
 }

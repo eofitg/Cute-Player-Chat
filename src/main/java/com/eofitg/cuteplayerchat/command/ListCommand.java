@@ -15,12 +15,12 @@ public class ListCommand extends AbstractCommand {
     public static final String USAGE = "/cuteplayerchat list";
     public static final String[] SUB_PERMISSIONS = new String[]{""};
 
-    public ListCommand(CommandSender sender) {
+    public ListCommand (CommandSender sender) {
         super(sender, NAME, DESCRIPTION, PERMISSION, SUB_PERMISSIONS, USAGE);
     }
 
     @Override
-    public void execute(CommandSender sender, Command command, String label, String[] args) {
+    public void execute (CommandSender sender, Command command, String label, String[] args) {
         if (!this.hasPermission()) {
             sender.sendMessage("§4权限不足，无法执行！");
             return;
@@ -29,5 +29,4 @@ public class ListCommand extends AbstractCommand {
         String users = Joiner.on(", ").join((Iterable)userNames);
         sender.sendMessage(CutePlayerChat.getInstance().getMessageFormatter().format("list.list", userNames.size(), users));
     }
-
 }
